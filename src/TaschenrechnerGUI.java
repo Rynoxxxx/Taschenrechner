@@ -1,4 +1,3 @@
-import javax.management.StringValueExp;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +24,7 @@ public class TaschenrechnerGUI {
     private JButton a6Button;
     private JButton a3Button;
     private JButton ergebnisButton;
+    private JButton min2Button;
 
     double a, ergebnis, b;
     String zeichen;
@@ -36,8 +36,10 @@ public class TaschenrechnerGUI {
             public void actionPerformed(ActionEvent e) {
                 textDisplay.setText("");
             }
+
         });
         //-----------------------Zahlen------------------------
+
         a7Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -180,6 +182,16 @@ public class TaschenrechnerGUI {
                     a= Double.parseDouble("");
                     b= Double.parseDouble("");
                     zeichen= "";
+                }
+            }
+        });
+        //------------minus zahlen button---------------------
+        min2Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(!textDisplay.getText().contains("-"))
+                {
+                    textDisplay.setText("-");
                 }
             }
         });
