@@ -158,7 +158,7 @@ public class TaschenrechnerGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 b = Double.parseDouble(textDisplay.getText());
-                    if (zeichen =="+"){
+                if (zeichen =="+"){
                     ergebnis = a+b;
                     textDisplay.setText(String.valueOf(ergebnis));
                     a= Double.parseDouble("");
@@ -177,6 +177,12 @@ public class TaschenrechnerGUI {
                     b= Double.parseDouble("");
                     zeichen= "";
                 }else if (zeichen =="/"){
+                    if (a == Double.parseDouble("0")){
+                        textDisplay.setText("ERROR404 (DIV 0 NOT POSSIBLE");
+                    }
+                    if (b == Double.parseDouble("0")){
+                        textDisplay.setText("ERROR404 (DIV 0 NOT POSSIBLE");
+                    }
                     ergebnis = a/b;
                     textDisplay.setText(String.valueOf(ergebnis));
                     a= Double.parseDouble("");
